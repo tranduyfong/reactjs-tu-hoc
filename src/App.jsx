@@ -1,9 +1,16 @@
+import { useState } from "react";
 import TodoData from "./assets/components/new/TodoData";
 import TodoNew from "./assets/components/new/TodoNew";
 import './assets/components/new/todo.css';
 import reactLogo from './assets/react.svg';
 
 const App = () => {
+
+  const [todoList, valueTodoList] = useState([
+    { id: 1, name: 'Learning React' },
+    { id: 2, name: 'Watching Youtube' }
+  ])
+
   const temp = 'tranduyphong'
   const age = 25
   const data = {
@@ -25,6 +32,7 @@ const App = () => {
         name={temp}
         age={age}
         data={data}
+        todoList={todoList}
       />
       <img src={reactLogo} className="logo" />
     </div>
