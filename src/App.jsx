@@ -5,6 +5,7 @@ import './components/new/todo.css';
 import reactLogo from './react.svg';
 import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
+import { Outlet } from "react-router-dom";
 
 const App = () => {
 
@@ -45,6 +46,7 @@ const App = () => {
           <img src={reactLogo} className="logo" />
         }
       </div>
+      <Outlet />
       <Footer />
     </>
   );
