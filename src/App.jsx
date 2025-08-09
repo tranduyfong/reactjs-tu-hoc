@@ -1,14 +1,14 @@
 import { useState } from "react";
-import TodoData from "./assets/components/new/TodoData";
-import TodoNew from "./assets/components/new/TodoNew";
-import './assets/components/new/todo.css';
-import reactLogo from './assets/react.svg';
+import TodoData from "./components/new/TodoData";
+import TodoNew from "./components/new/TodoNew";
+import './components/new/todo.css';
+import reactLogo from './react.svg';
+import Header from "./components/layout/header";
+import Footer from "./components/layout/footer";
 
 const App = () => {
 
   const [todoList, setTodoList] = useState([
-    // { id: 1, name: 'Learning React' },
-    // { id: 2, name: 'Watching Youtube' }
   ])
 
   const addNewTodo = (name) => {
@@ -30,19 +30,23 @@ const App = () => {
   }
 
   return (
-    <div className="todo-app">
-      <div className="todo-title">Todo List</div>
-      <TodoNew
-        addNewTodo={addNewTodo}
-      />
-      {todoList.length > 0 ?
-        <TodoData
-          todoList={todoList}
-          deleteTodo={deleteTodo}
-        /> :
-        <img src={reactLogo} className="logo" />
-      }
-    </div>
+    <>
+      <Header />
+      <div className="todo-app">
+        <div className="todo-title">Todo List</div>
+        <TodoNew
+          addNewTodo={addNewTodo}
+        />
+        {todoList.length > 0 ?
+          <TodoData
+            todoList={todoList}
+            deleteTodo={deleteTodo}
+          /> :
+          <img src={reactLogo} className="logo" />
+        }
+      </div>
+      <Footer />
+    </>
   );
 }
 
