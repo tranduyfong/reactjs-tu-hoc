@@ -1,6 +1,6 @@
 import { Button, Input, notification } from "antd";
 import { useState } from "react";
-import createUserAPI from "../../services/api.service";
+import { createUserAPI } from "../../services/api.service";
 
 const UserForm = () => {
     const [fullName, setFullName] = useState("");
