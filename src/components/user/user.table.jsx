@@ -2,12 +2,16 @@ import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { Table } from 'antd';
 import UpdateUserModal from './update.user.modal';
 import { useState } from 'react';
+import InformationUser from './information.user.modal';
+import DeleteUserConfirm from './delete.confirm.user';
 
 const UserTable = (props) => {
     const { dataUsers, loadUser } = props;
 
-    const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
     const [dataUpdate, setDataUpdate] = useState(null);
+    const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
+    const [isModalInforOpen, setIsModalInforOpen] = useState(false);
+    const [isModalDeleteOpen, setModalDeleteOpen] = useState(false);
 
     const columns = [
         {
@@ -16,7 +20,10 @@ const UserTable = (props) => {
             render: (_, record) => {
                 return (
                     <>
-                        <a href='#'>{record._id}</a>
+                        <a href='#' onClick={() => {
+                            setDataUpdate(record);
+                            setIsModalInforOpen(true);
+                        }}>{record._id}</a >
                     </>
                 )
             }
@@ -37,11 +44,16 @@ const UserTable = (props) => {
                     <>
                         <a style={{ marginRight: '10px', cursor: 'pointer' }}><EditOutlined
                             onClick={() => {
-                                setDataUpdate(record)
+                                setDataUpdate(record);
                                 setIsModalUpdateOpen(true);
                             }}
                         /></a>
-                        <a style={{ color: 'red', cursor: 'pointer' }}><DeleteOutlined /></a>
+                        <a style={{ color: 'red', cursor: 'pointer' }}><DeleteOutlined
+                            onClick={() => {
+                                setDataUpdate(record);
+                                setModalDeleteOpen(true);
+                            }}
+                        /></a>
                     </>
                 )
             }
@@ -57,6 +69,17 @@ const UserTable = (props) => {
                 setIsModalUpdateOpen={setIsModalUpdateOpen}
                 dataUpdate={dataUpdate}
                 setDataUpdate={setDataUpdate}
+                loadUser={loadUser}
+            />
+            <InformationUser
+                isModalInforOpen={isModalInforOpen}
+                setIsModalInforOpen={setIsModalInforOpen}
+                dataUpdate={dataUpdate}
+            />
+            <DeleteUserConfirm
+                isModalDeleteOpen={isModalDeleteOpen}
+                setModalDeleteOpen={setModalDeleteOpen}
+                dataUpdate={dataUpdate}
                 loadUser={loadUser}
             />
         </>
