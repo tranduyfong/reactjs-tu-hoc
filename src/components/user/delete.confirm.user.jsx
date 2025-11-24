@@ -50,7 +50,7 @@ const DeleteUserConfirm = (props) => {
                 </>
             )}
         >
-            <p>Do you want to delete user "{name}" ?</p>
+            <p>Do you want to delete user {name} ?</p>
         </Modal>
     );
 }
