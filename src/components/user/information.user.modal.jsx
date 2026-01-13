@@ -10,9 +10,10 @@ const InformationUser = (props) => {
     const [avatar, setAvatar] = useState("");
 
     const { isModalInforOpen, setIsModalInforOpen, dataUpdate } = props;
+
     useEffect(() => {
         if (dataUpdate) {
-            setId(dataUpdate.id)
+            setId(dataUpdate._id)
             setFullName(dataUpdate.fullName);
             setEmail(dataUpdate.email);
             setPhone(dataUpdate.phone);
@@ -24,6 +25,15 @@ const InformationUser = (props) => {
         setIsModalInforOpen(false);
     }
 
+    const handleOnChangeFile = (event) => {
+        if (!event.target.files || event.target.files.length === 0) {
+            return;
+        }
+
+        const file = event.target.files[0];
+        console.log("Check file:", file);
+
+    }
     return (
         <>
             <Drawer
@@ -39,14 +49,17 @@ const InformationUser = (props) => {
                 <p>Email: {email}</p>
                 <p>Phone: {phone}</p>
                 <p>Avatar: </p>
-                <div>
-                    <img width={150} height={100} src={`${import.meta.env.VITE_BACKEND_URL}/images/avatar/${avatar}`} alt="Avatar user" />
+                <div style={{ marginTop: "10px", height: "100px", width: "150px", border: "1px solid #ccc" }}>
+                    <img style={{ width: "100%", height: "100%", objectFit: "contain" }} src={`${import.meta.env.VITE_BACKEND_URL}/images/avatar/${avatar}`} alt="Avatar user" />
                 </div>
-                <div>
+                <div style={{ marginTop: "15px" }}>
                     <Button type="primary">
                         <label htmlFor="btnUpload">Upload Avatar</label>
                     </Button>
-                    <input type="file" id="btnUpload" hidden />
+                    <input
+                        // onChange={handleOnChangeFile} 
+                        onChange={(event) => handleOnChangeFile(event)}
+                        type="file" id="btnUpload" hidden />
                 </div>
 
             </Drawer>
