@@ -75,6 +75,7 @@ const UserTable = (props) => {
                 isModalInforOpen={isModalInforOpen}
                 setIsModalInforOpen={setIsModalInforOpen}
                 dataUpdate={dataUpdate}
+                setDataUpdate={setDataUpdate}
             />
             <DeleteUserConfirm
                 isModalDeleteOpen={isModalDeleteOpen}

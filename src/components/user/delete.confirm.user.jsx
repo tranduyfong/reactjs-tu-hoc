@@ -39,6 +39,7 @@ const DeleteUserConfirm = (props) => {
 
     return (
         <Modal
+            okText="DELETE"
             open={isModalDeleteOpen}
             title="DELETE USER ?"
             onOk={() => deleteConfirm()}

@@ -8,7 +8,7 @@ const createUserAPI = (fullName, email, password, phone) => {
         password: password,
         phone: phone
     }
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInBob25lIjoiMTIzNDU2Nzg5IiwiZnVsbE5hbWUiOiJJJ20gQWRtaW4iLCJyb2xlIjoiQURNSU4iLCJzdWIiOiI2OTIxYWI4NGE5ZTVkMDQ2N2NiY2U5ZjYiLCJhdmF0YXIiOiIyMTIzMmYyOTdhNTdhNWE3NDM4OTRhMGU0YTgwMWZjMy5wbmciLCJpYXQiOjE3NjgzMzA0MDEsImV4cCI6MTc2ODM2NjQwMX0.XXPO-gsLoUMQd0iEDn0cTX1hDw2LyybAN9K1nYJEaGw'
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInBob25lIjoiMTIzNDU2Nzg5IiwiZnVsbE5hbWUiOiJJJ20gQWRtaW4iLCJyb2xlIjoiQURNSU4iLCJzdWIiOiI2OTIxYWI4NGE5ZTVkMDQ2N2NiY2U5ZjYiLCJhdmF0YXIiOiIyMTIzMmYyOTdhNTdhNWE3NDM4OTRhMGU0YTgwMWZjMy5wbmciLCJpYXQiOjE3Njg1MDI3MDcsImV4cCI6MTc2ODUzODcwN30.SvhXBachHnF98xUbhceAa2qQlm8c680-smH1M1DUEm4'
     return axios.post(URL_BACKEND, data, {
         headers: {
             Authorization: `Bearer ${token}`
@@ -23,7 +23,7 @@ const updateUserAPI = (_id, fullName, phone) => {
         fullName: fullName,
         phone: phone
     }
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInBob25lIjoiMTIzNDU2Nzg5IiwiZnVsbE5hbWUiOiJJJ20gQWRtaW4iLCJyb2xlIjoiQURNSU4iLCJzdWIiOiI2OTIxYWI4NGE5ZTVkMDQ2N2NiY2U5ZjYiLCJhdmF0YXIiOiIyMTIzMmYyOTdhNTdhNWE3NDM4OTRhMGU0YTgwMWZjMy5wbmciLCJpYXQiOjE3NjgzMzA0MDEsImV4cCI6MTc2ODM2NjQwMX0.XXPO-gsLoUMQd0iEDn0cTX1hDw2LyybAN9K1nYJEaGw'
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInBob25lIjoiMTIzNDU2Nzg5IiwiZnVsbE5hbWUiOiJJJ20gQWRtaW4iLCJyb2xlIjoiQURNSU4iLCJzdWIiOiI2OTIxYWI4NGE5ZTVkMDQ2N2NiY2U5ZjYiLCJhdmF0YXIiOiIyMTIzMmYyOTdhNTdhNWE3NDM4OTRhMGU0YTgwMWZjMy5wbmciLCJpYXQiOjE3Njg1MDI3MDcsImV4cCI6MTc2ODUzODcwN30.SvhXBachHnF98xUbhceAa2qQlm8c680-smH1M1DUEm4'
     return axios.put(URL_BACKEND, data, {
         headers: {
             Authorization: `Bearer ${token}`
@@ -33,7 +33,7 @@ const updateUserAPI = (_id, fullName, phone) => {
 
 const fetchAllUserAPI = () => {
     const URL_BACKEND = '/api/v1/user';
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInBob25lIjoiMTIzNDU2Nzg5IiwiZnVsbE5hbWUiOiJJJ20gQWRtaW4iLCJyb2xlIjoiQURNSU4iLCJzdWIiOiI2OTIxYWI4NGE5ZTVkMDQ2N2NiY2U5ZjYiLCJhdmF0YXIiOiIyMTIzMmYyOTdhNTdhNWE3NDM4OTRhMGU0YTgwMWZjMy5wbmciLCJpYXQiOjE3NjgzMzA0MDEsImV4cCI6MTc2ODM2NjQwMX0.XXPO-gsLoUMQd0iEDn0cTX1hDw2LyybAN9K1nYJEaGw'
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInBob25lIjoiMTIzNDU2Nzg5IiwiZnVsbE5hbWUiOiJJJ20gQWRtaW4iLCJyb2xlIjoiQURNSU4iLCJzdWIiOiI2OTIxYWI4NGE5ZTVkMDQ2N2NiY2U5ZjYiLCJhdmF0YXIiOiIyMTIzMmYyOTdhNTdhNWE3NDM4OTRhMGU0YTgwMWZjMy5wbmciLCJpYXQiOjE3Njg1MDI3MDcsImV4cCI6MTc2ODUzODcwN30.SvhXBachHnF98xUbhceAa2qQlm8c680-smH1M1DUEm4'
     return axios.get(URL_BACKEND, {
         headers: {
             Authorization: `Bearer ${token}`
@@ -43,7 +43,7 @@ const fetchAllUserAPI = () => {
 
 const deleteUserAPI = (id) => {
     const URL_BACKEND = `/api/v1/user/${id}`;
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInBob25lIjoiMTIzNDU2Nzg5IiwiZnVsbE5hbWUiOiJJJ20gQWRtaW4iLCJyb2xlIjoiQURNSU4iLCJzdWIiOiI2OTIxYWI4NGE5ZTVkMDQ2N2NiY2U5ZjYiLCJhdmF0YXIiOiIyMTIzMmYyOTdhNTdhNWE3NDM4OTRhMGU0YTgwMWZjMy5wbmciLCJpYXQiOjE3NjgzMzA0MDEsImV4cCI6MTc2ODM2NjQwMX0.XXPO-gsLoUMQd0iEDn0cTX1hDw2LyybAN9K1nYJEaGw'
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInBob25lIjoiMTIzNDU2Nzg5IiwiZnVsbE5hbWUiOiJJJ20gQWRtaW4iLCJyb2xlIjoiQURNSU4iLCJzdWIiOiI2OTIxYWI4NGE5ZTVkMDQ2N2NiY2U5ZjYiLCJhdmF0YXIiOiIyMTIzMmYyOTdhNTdhNWE3NDM4OTRhMGU0YTgwMWZjMy5wbmciLCJpYXQiOjE3Njg1MDI3MDcsImV4cCI6MTc2ODUzODcwN30.SvhXBachHnF98xUbhceAa2qQlm8c680-smH1M1DUEm4'
     return axios.delete(URL_BACKEND, {
         headers: {
             Authorization: `Bearer ${token}`
